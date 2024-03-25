@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 style="text-align: center; color: green">{{ title }}</h1>
+<a href="./add_comment">Оставить комментарий</a>
+{% for el in products %}
+<div class="cart">
+    <h3>{{ el.name }}</h3>
+    <h4>{{ el.price }}</h4>
+    <p>{{ el.description }}</p>
+</div>
+{% endfor %}
+{% endblock %}

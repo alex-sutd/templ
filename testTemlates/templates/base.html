@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru"
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+         <img src="{% static 'logo.png' %}" alt="Логотип овощной компании" width="200" height="150">
+    </div>
+</head>
+<body style="background: url('{% static 'back.jpg' %}') no-repeat center center fixed; background-size: cover;">
+
+<div class="container"></div>
+    <div class="header item" >
+         Овощи и фрукты
+    </div>
+    </div>
+    <div class="sidebar item">
+    <ul>
+    {% for key, value in menu.items %}
+        <li> <a href="{{ value }}">{{ key }}</a> </li>
+    {% endfor %}
+    </ul>
+    </div>
+    <div class="content item">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+</body>
+</html>
